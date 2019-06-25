@@ -135,7 +135,7 @@
     }
   }
 
-  // 回车提交用户名生宿
+  // 回车提交用户名
   d.getElementById('username').onkeydown = function (e) {
     e = e || event
     if (e.keyCode === 13) {
