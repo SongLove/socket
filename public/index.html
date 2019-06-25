@@ -10,11 +10,26 @@
   <title>T</title>
   <script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.js"></script>
   <style>
-    .user{
+    .user .content{
       float: right;
     }
-    .service{
+    .service .content, .service .content img, .service .content p, .service .content .head-img {
       float: left;
+    }
+    .head-img {
+      float: right;
+    }
+    .head-img img{
+      width: 45px;
+      border-radius: 50%;
+      float: right;
+    }
+    .content-msg{
+      margin: 0 10px;
+      padding: 5px 20px;
+      float: right;
+      border: 1px solid #000;
+      border-radius: 10px;
     }
   </style>
 </head>

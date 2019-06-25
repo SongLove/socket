@@ -108,7 +108,7 @@
 
       // 监听新用户登陆
       this.socket.on('login', (o) => {
-        console.log('有人登陆:', o )
+        console.log('有人登陆:', o)
         CHAT.updateSysMsg(o, 'login')
       })
 
@@ -121,14 +121,18 @@
       this.socket.on('message', (obj) => {
         console.log(obj)
         var isme = (obj.userid == CHAT.userid) ? true : false
-        var contentBox = `<div>${obj.content}</div>`
-        var usernameBox = `<div>${obj.username}</div>`
+        var contentBox = `
+          <div class="content">
+            <div class="head-img"> ${isme ? '<img src="https://www.jq22.com/tx/24.png"/>' : '<img src="https://www.jq22.com/tx/23.png"/>'}</div>
+            <p class="content-msg"> ${obj.content}</p>
+          </div>
+        `
         var section = d.createElement('section')
 
         if (isme) section.className = 'user'
         else section.className = 'service'
- 
-        section.innerHTML = usernameBox + contentBox
+
+        section.innerHTML = contentBox
         CHAT.msgObj.appendChild(section)
         CHAT.scrollToBottom()
       })
