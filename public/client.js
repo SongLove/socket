@@ -123,7 +123,7 @@
         var isme = (obj.userid == CHAT.userid) ? true : false
         var contentBox = `
           <div class="content">
-            <div class="head-img"> ${isme ? '<img src="https://www.jq22.com/tx/24.png"/>' : '<img src="https://www.jq22.com/tx/23.png"/>'}</div>
+            <div class="head-img"> ${isme ? '<img src="./static/23.png"/>' : '<img src="./static/24.png"/>'}</div>
             <p class="content-msg"> ${obj.content}</p>
           </div>
         `

@@ -4,17 +4,17 @@ const app = express()
 const fs = require('fs')
 
 // 使用静态资源访问public为跟目录
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('./public'))
 app.get('/', (req, res, next) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
-  fs.readFile('../public/index.html', 'utf-8', (err, data) => {
+  fs.readFile('./public/chat.html', 'utf-8', (err, data) => {
     if (err) throw err
     res.end(data)
   })
   console.log(req.path)
 })
 app.get('/aa.js', (req, res) => {
-  fs.readFile('../public/client.js', 'utf-8', (err, data) => {
+  fs.readFile('./public/client.js', 'utf-8', (err, data) => {
     if (err) throw err
     res.end(data)
   })
